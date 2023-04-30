@@ -1,0 +1,17 @@
+offset: 0,
+
+adrp [destination: x0, value: 134217728],
+
+adr [destination: x31, value: 0],
+adr [destination: x0, value: 0],
+adr [destination: x0, value: 0],
+adr [destination: x0, value: 0],
+
+adr [destination: x0, value: str],
+adr [destination: x0, value: str],
+adr [destination: x0, value: str],
+adr [destination: x0, value: str],
+
+
+
+str: utf8 "hello world",

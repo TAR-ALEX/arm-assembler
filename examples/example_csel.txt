@@ -1,0 +1,20 @@
+offset: 0,
+
+csel [left: x1, right: x2, destination: x0, cond: eq],
+csel [left: x1, right: x2, destination: x0, cond: ne],
+
+csneg [left: x1, right: x2, destination: x0, cond: eq],
+csneg [left: x1, right: x2, destination: x0, cond: ne],
+
+csinv [left: x1, right: x2, destination: x0, cond: eq],
+csinv [left: x1, right: x2, destination: x0, cond: ne],
+
+csinc [left: x1, right: x2, destination: x0, cond: eq],
+csinc [left: x1, right: x2, destination: x0, cond: ne],
+
+cset [destination: x0, cond: eq],
+csetm [destination: x0, cond: eq],
+
+cneg [value:x1, destination: x0, cond: eq],
+cinc [value:x1, destination: x0, cond: eq],
+cinv [value:x1, destination: x0, cond: eq],

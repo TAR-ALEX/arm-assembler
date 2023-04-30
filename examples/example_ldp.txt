@@ -1,0 +1,19 @@
+offset: 0,
+
+ldp [valueAt: x10, destination: [x0,x1]],
+ldp [valueAt: x10, offset: 504, destination: [x0,x1]],
+ldp [valueAt: x10, offset: 8, destination: [x0,x1]],
+ldp [valueAt: x10, postAdd: -512, destination: [x0,x1]],
+ldp [valueAt: x10, preAdd: -8, destination: [x0,x1]],
+
+ldpsw [valueAt: x10, destination: [x0,x1]],
+ldpsw [valueAt: x10, offset: 252, destination: [x0,x1]],
+ldpsw [valueAt: x10, offset: 4, destination: [x0,x1]],
+ldpsw [valueAt: x10, postAdd: -256, destination: [x0,x1]],
+ldpsw [valueAt: x10, preAdd: -4, destination: [x0,x1]],
+
+stp [destinationAt: x10, value: [x0,x1]],
+stp [destinationAt: x10, offset: 504, value: [x0,x1]],
+stp [destinationAt: x10, offset: 8, value: [x0,x1]],
+stp [destinationAt: x10, postAdd: -512, value: [x0,x1]],
+stp [destinationAt: x10, preAdd: -8, value: [x0,x1]],

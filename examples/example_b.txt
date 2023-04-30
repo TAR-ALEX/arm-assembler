@@ -1,0 +1,13 @@
+offset: 0,
+
+b [to: -134217728],
+b [to: 64, cond: eq],
+bl [to: 134217728],
+br [to: x3],
+blr [to: x3],
+cbnz [to: 64, test: x4],
+cbz [to: 64, test: x4],
+ret,
+ret [to: x20],
+tbz  [to: 64, test: x4, bit: 7],
+tbnz [to: 64, test: x4, bit: 7],

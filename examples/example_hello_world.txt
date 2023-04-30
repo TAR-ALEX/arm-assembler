@@ -1,0 +1,14 @@
+offset: 4194304,
+mov [value: 1, destination: x0],
+adr [destination: x1, value: msg],
+mov [value: 12, destination: x2],
+mov [value: 64, destination: x8],
+svc [value: 0],
+
+mov [destination: x0, value: 32],
+mov [value: 93, destination: x8],
+svc [value: 0],
+
+msg: utf8 "hello world
+",
+dword 0,

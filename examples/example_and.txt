@@ -1,0 +1,34 @@
+offset: 0,
+
+and [left: xzr, right: 2, destination: sp],
+ands [left: xzr, right: 2, destination: xzr],
+orr [left: xzr, right: 2, destination: sp],
+eor [left: xzr, right: 2, destination: sp],
+tst [left: xzr, right: 2],
+
+and [left: x10, right: x15, destination: x5],
+ands [left: x10, right: x15, destination: x5],
+orr [left: x10, right: x15, destination: x5],
+eor [left: x10, right: x15, destination: x5],
+tst [left: x10, right: x15],
+
+and [left: [x10, shift:[ror,31]], right: x15, destination: x5],
+and [left: x10, right: [x15, shift:[ror,31]], destination: x5],
+and [left: [x10, shift:[ror,31]], right: [x15, shift:[ror,31]], destination: x5],
+
+
+
+and [left: 1, right: w15, destination: w5],
+and [left: w10, right: 2, destination: w5],
+
+and [left: 3, right: w15, destination: w5],
+and [left: w10, right: 4, destination: w5],
+
+and [left: 8, right: w15, destination: w5],
+and [left: w10, right: 16, destination: w5],
+
+and [left: 2147483648, right: w15, destination: w5],
+and [left: w10, right: -2147483649, destination: w5],
+
+and [left: 4294967294, right: w15, destination: w5],
+and [left: w10, right: -4294967295, destination: w5],

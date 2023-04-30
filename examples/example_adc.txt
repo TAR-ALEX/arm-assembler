@@ -1,0 +1,6 @@
+offset: 0,
+
+adc [left: w1, right: wzr, destination: w3],
+sbc [left: x1, right: x2, destination: x3],
+adcs [left: x1, right: x2, destination: x3],
+sbcs [left: x1, right: x2, destination: x3],

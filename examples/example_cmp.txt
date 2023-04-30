@@ -1,0 +1,35 @@
+offset: 0,
+
+cmp[left: x1, right: x2],
+cmn[left: w1, right: w2],
+
+cmn[left: x1, right: [x2, shift: [lsl,63]]],
+cmn[left: w1, right: [w2, shift: [lsl,31]]],
+cmn[left: [x1, shift: [lsl,63]], right: x2],
+cmn[left: [w1, shift: [lsl,31]], right: w2],
+
+cmn[left: x1, right: [x2, extend: uxt, shift: [lsl,4]]],
+cmn[left: [x1, extend: sxt, shift: [lsl,4]], right: x2],
+
+cmn[left: 255, right: [x2, extend: uxt, shift: [lsl,4]]],
+cmn[left: [x1, extend: sxt, shift: [lsl,4]], right: 255],
+
+cmn[left: 255, right: x2],
+cmn[left: x1, right: 255],
+
+cmp[left: x1, right: x2],
+cmp[left: w1, right: w2],
+
+cmp[left: x1, right: [x2, shift: [lsl,63]]],
+cmp[left: w1, right: [w2, shift: [lsl,31]]],
+cmp[left: [x1, shift: [lsl,63]], right: x2],
+cmp[left: [w1, shift: [lsl,31]], right: w2],
+
+cmp[left: x1, right: [x2, extend: uxt, shift: [lsl,4]]],
+cmp[left: [x1, extend: sxt, shift: [lsl,4]], right: x2],
+
+cmp[left: 255, right: [x2, extend: uxt, shift: [lsl,4]]],
+cmp[left: [x1, extend: sxt, shift: [lsl,4]], right: 255],
+
+cmp[left: 255, right: x2],
+cmp[left: x1, right: 255],

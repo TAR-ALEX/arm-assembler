@@ -1,0 +1,75 @@
+//
+//  main.cpp
+//  scat
+//
+//  Created by Alex Tarasov on 2/5/20.
+//  Copyright © 2020 Alex Tarasov. All rights reserved.
+//
+
+#include "basicElfWrapper.hpp"
+
+#include "ParseTree.hpp"
+#include "Tokenizer.hpp"
+#include "Bitstream.hpp"
+//#include "Arm/Arm.hpp"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, const char *argv[]) {
+  ifstream infile;
+  infile.open("examples/helloworld.l");
+
+  Tokenizer tkn;
+  ParseTreeBuilder ptb;
+  //Arm64 arm64;
+
+  Logging log;
+
+  tkn.log.forward(cout);
+  ptb.log.forward(cout);
+  //arm64.log.forward(cout);
+
+  log.forward(cout);
+
+  log << "------------------------" << endl;
+
+  auto tokens = tkn.tokenize(infile);
+  log << "------------" << endl;
+
+  infile.close();
+
+  tokens.insert(tokens.begin(), Token("[","START"));
+  tokens.push_back(Token("]", "END"));
+
+  for (Token token: tokens) log << token.toString() << endl;
+
+  log << "------------------------" << endl;
+
+  auto tree = ptb.buildParseTree(tokens);
+  log << "------------" << endl;
+  log << tree.toString() << endl;
+
+  // log << "------------------------" << endl;
+
+  // auto normalTree = ptb.normalize(tree);
+  // log << "------------" << endl;
+  //log << normalTree.toString() << endl;
+
+  // log << "------------------------" << endl;
+  //
+  // auto machineCode = arm64.assemble(normalTree);
+  // log << "------------" << endl;
+  //log << machineCode.getHexDWords() << endl;
+  //wrapElf(machineCode.getBits(), arm64.getOffset(), "executable");
+
+  // ofstream binFile ("kernel8.img", ios::out | ios::binary);
+  // for(auto b: machineCode.getBits())
+  //   binFile << b;
+  // binFile.close();
+
+  return 0;
+}

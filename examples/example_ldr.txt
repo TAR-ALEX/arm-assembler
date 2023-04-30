@@ -1,0 +1,34 @@
+offset: 0,
+
+ldrb [valueAt: sp, offset:[w2, shift:[lsl,0], extend: uxt], destination: w0],
+ldrh [valueAt: sp, offset:[w2, shift:[lsl,1], extend: uxt], destination: w0],
+ldrsb [valueAt: sp, offset:[w2, shift:[lsl,0], extend: uxt], destination: w0],
+ldrsh [valueAt: sp, offset:[w2, shift:[lsl,1], extend: uxt], destination: w0],
+ldrsw [valueAt: sp, offset:[w2, shift:[lsl,2], extend: uxt], destination: x0],
+
+ldrb [valueAt: sp, offset:1, destination: w0],
+ldrh [valueAt: sp, offset:1, destination: w0],
+ldrsb [valueAt: sp, offset:1, destination: x0],
+ldrsh [valueAt: sp, offset:1, destination: x0],
+ldrsw [valueAt: sp, offset:1, destination: x0],
+
+ldrb [valueAt: x10, offset:17, destination: w0],
+ldrh [valueAt: x10, offset:17, destination: w0],
+ldrsb [valueAt: x10, offset:17, destination: x0],
+ldrsh [valueAt: x10, offset:17, destination: x0],
+ldrsw [valueAt: x10, offset:17, destination: x0],
+
+ldr [valueAt: pointer, destination: w2],
+ldr [valueAt: pointer, destination: w2],
+
+ldr [valueAt: x1, destination: x2],
+
+ldr [valueAt: x10, destination: x0],
+ldr [valueAt: x10, offset:7, destination: x0],
+ldr [valueAt: x10, offset:32760, destination: x0],
+ldr [valueAt: x10, postAdd:4, destination: x0],
+ldr [valueAt: x10, preAdd:4, destination: x0],
+
+ldr [valueAt: x10, offset:[w2, shift:[lsl,3], extend: uxt], destination: x0],
+
+pointer: dword 94928029489910,

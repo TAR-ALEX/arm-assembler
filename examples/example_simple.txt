@@ -1,0 +1,28 @@
+offset: 0,
+
+wfe,
+nop,
+nop 3,
+wfe r1,
+
+msr [value: x1, destination: s33420],
+msr [value: x1, destination: s004F5],
+mrs [value: s33420, destination: x1],
+
+add [destination: x3, left: x2, right: [x1, extend: uxt, shift: [lsl,4]]],
+add [destination: x3, left: [x2, extend: uxt, shift: [lsl,4]], right: x1],
+
+add [destination: x3, left: x2, right: [x1,  shift: [lsl,5]]],
+add [destination: x3, left: [x2, shift: [lsl,5]], right: x1],
+
+add [destination: x3, left: x2, right: [x1,  shift: [lsl,5]]],
+add [destination: x3, left: [x2, shift: [lsl,5]], right: x1],
+
+sub [destination: x3, left: x2, right: [x1, extend: uxt, shift: [lsl,4]]],
+sub [destination: x3, left: [x2, extend: uxt, shift: [lsl,4]], right: x1],
+
+sub [destination: x3, left: x2, right: [x1,  shift: [lsl,5]]],
+sub [destination: x3, left: [x2, shift: [lsl,5]], right: x1],
+
+sub [destination: x3, left: x2, right: [x1,  shift: [lsl,5]]],
+sub [destination: x3, left: [x2, shift: [lsl,5]], right: x1],

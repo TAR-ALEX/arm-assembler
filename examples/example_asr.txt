@@ -1,0 +1,12 @@
+offset: 0,
+
+asr [shift: x3, value: x1, destination: x2],
+asr [shift: x3, value: x1, destination: x2],
+asr [shift: w15, value: w5, destination: w30],
+
+asr [shift: 3, value: x1, destination: x2],
+asr [shift: 4, value: x1, destination: x2],
+asr [shift: 5, value: w5, destination: w30],
+
+
+str: utf8 "hello world",

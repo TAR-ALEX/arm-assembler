@@ -1,0 +1,16 @@
+offset: 0,
+
+mov [value: sp, destination: x0],
+mov [value: wsp, destination: w6],
+mov [value: x0, destination: xsp],
+
+mov [value: sp, destination: sp],
+mov [value: wsp, destination: w6],
+mov [value: x0, destination: xsp],
+
+mov [value: 2147483648, destination: w0],
+mov [value: -5, destination: x6],
+mov [value: -1, destination: x0],
+
+mov [value: w1, destination: w0],
+mov [value: xzr, destination: x2],

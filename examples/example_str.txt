@@ -1,0 +1,32 @@
+offset: 0,
+
+str [destinationAt: x10, offset:1, value: x0],
+str [destinationAt: x10, preAdd:1, value: x0],
+str [destinationAt: x10, postAdd:1, value: x0],
+
+str [destinationAt: x10, offset:[w2, shift:[lsl,3], extend: uxt], value: x0],
+
+
+str [destinationAt: x10, offset:1, value: w0],
+str [destinationAt: x10, preAdd:1, value: w0],
+str [destinationAt: x10, postAdd:1, value: w0],
+
+str [destinationAt: x10, offset:[w2, shift:[lsl,2], extend: uxt], value: w0],
+
+
+str [destinationAt: x10, offset:1, value: h0],
+str [destinationAt: x10, preAdd:1, value: h0],
+str [destinationAt: x10, postAdd:1, value: h0],
+
+str [destinationAt: x10, offset:[w2, shift:[lsl,1], extend: uxt], value: h0],
+
+
+str [destinationAt: x10, offset:1, value: b0],
+str [destinationAt: x10, preAdd:1, value: b0],
+str [destinationAt: x10, postAdd:1, value: b0],
+
+str [destinationAt: x10, offset:[w2, shift:[lsl,0], extend: uxt], value: b0],
+
+
+
+pointer: dword 94928029489910,

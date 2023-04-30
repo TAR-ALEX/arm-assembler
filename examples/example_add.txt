@@ -1,0 +1,70 @@
+offset: 0,
+add [left: w10, right: w15, destination: w5],
+
+add [left: [shift: [lsl, 31], w10], right: w15, destination: w5],
+add [left: w10, right: [shift: [lsl, 31], w15], destination: w5],
+add [left: [shift: [lsl, 31], w10], right: [shift: [lsl, 31], w15], destination: w5],
+
+add [left: w10, right: 255, destination: w5],
+add [left: 255, right: w15, destination: w5],
+add [left: 255, right: 255, destination: w5],
+
+add [left: [shift: [lsl, 31], w10], right: 255, destination: w5],
+add [left: 255, right: [shift: [lsl, 31], w15], destination: w5],
+
+adds [left: w10, right: w15, destination: w5],
+
+adds [left: [shift: [lsl, 31], w10], right: w15, destination: w5],
+adds [left: w10, right: [shift: [lsl, 31], w15], destination: w5],
+adds [left: [shift: [lsl, 31], w10], right: [shift: [lsl, 31], w15], destination: w5],
+
+adds [left: w10, right: 255, destination: w5],
+adds [left: 255, right: w15, destination: w5],
+adds [left: 255, right: 255, destination: w5],
+
+adds [left: [shift: [lsl, 31], w10], right: 255, destination: w5],
+adds [left: 255, right: [shift: [lsl, 31], w15], destination: w5],
+
+
+sub [left: w10, right: w15, destination: w5],
+
+sub [left: [shift: [lsl, 31], w10], right: w15, destination: w5],
+sub [left: w10, right: [shift: [lsl, 31], w15], destination: w5],
+sub [left: [shift: [lsl, 31], w10], right: [shift: [lsl, 31], w15], destination: w5],
+
+sub [left: w10, right: 255, destination: w5],
+sub [left: 255, right: w15, destination: w5],
+sub [left: 255, right: 255, destination: w5],
+
+sub [left: [shift: [lsl, 31], w10], right: 255, destination: w5],
+sub [left: 255, right: [shift: [lsl, 31], w15], destination: w5],
+
+subs [left: w10, right: w15, destination: w5],
+
+subs [left: [shift: [lsl, 31], w10], right: w15, destination: w5],
+subs [left: w10, right: [shift: [lsl, 31], w15], destination: w5],
+subs [left: [shift: [lsl, 31], w10], right: [shift: [lsl, 31], w15], destination: w5],
+
+subs [left: w10, right: 255, destination: w5],
+subs [left: 255, right: w15, destination: w5],
+subs [left: 255, right: 255, destination: w5],
+
+subs [left: [shift: [lsl, 31], w10], right: 255, destination: w5],
+subs [left: 255, right: [shift: [lsl, 31], w15], destination: w5],
+
+
+mov [value: 1, destination: x0],
+ldr [destination: x1, value: j],
+ldr [destination: x1, value: j],
+mov [value: 5, destination: x6],
+q: add [left: w12, right: q, destination: w4],
+a: adc [left: w12, right: w1, destination: w2],
+b: add [left: [shift: [lsl, 31], w12], right: w1, destination: w2],
+c: add [left: x12, right: [shift: [lsl, 63], x1], destination: x2],
+d: sub [left: w1, right: [w0, shift: [lsl, 20]], destination: w2],
+e: add [left: w8, destination: w26, right: w13],
+f: sub [left: x8, destination: x26, right: x13],
+g: dword [777],
+h: dword [777, 255],
+i: utf8 "asdfzxcvqwer",
+j: dword [255],

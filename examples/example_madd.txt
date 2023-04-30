@@ -1,0 +1,31 @@
+offset: 0,
+
+madd [left: x1, right: x2, addTo: x3, destination: x4],
+msub [left: x1, right: x2, subFrom: x3, destination: x4],
+
+mul [left: x1, right: x2, destination: x4],
+mneg [left: x1, right: x2, destination: x4],
+
+neg [value: x1, destination: x3],
+negs [value: x2, destination: x4],
+
+ngc [value: x1, destination: x3],
+ngcs [value: x2, destination: x4],
+
+udiv [left: x1, right: x2, destination: x3],
+sdiv [left: x1, right: x2, destination: x3],
+
+umaddl [left: w1, right: w2, addTo: x3, destination: x4],
+smaddl [left: w1, right: w2, addTo: x3, destination: x4],
+
+umsubl [left: w1, right: w2, subFrom: x3, destination: x4],
+smsubl [left: w1, right: w2, subFrom: x3, destination: x4],
+
+umnegl [left: w1, right: w2, subFrom: x3, destination: x4],
+smnegl [left: w1, right: w2, subFrom: x3, destination: x4],
+
+umulh [left: w1, right: w2, destination: x4],
+smulh [left: w1, right: w2, destination: x4],
+
+umull [left: w1, right: w2, destination: x4],
+smull [left: w1, right: w2, destination: x4],

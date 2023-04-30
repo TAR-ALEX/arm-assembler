@@ -1,0 +1,23 @@
+offset: 0,
+
+bic [left: x1, right: x2, destination: x3],
+bics [left: x1, right: [x2, shift: [lsl, 31]], destination: x3],
+orn [left: x1, right: x2, destination: x3],
+eon [left: x1, right: [x2, shift: [lsl, 31]], destination: x3],
+
+
+lsl [value: x1, shift: x2, destination: x3],
+lsr [value: x1, shift: x2, destination: x3],
+asr [value: x1, shift: x2, destination: x3],
+ror [value: x1, shift: x2, destination: x3],
+
+mvn [value: w1, destination: w3],
+mvn [value: [x1, shift: [lsl, 63]], destination: x3],
+
+movk [value: 1, destination: w3],
+movz [value: 1, destination: w3],
+movn [value: 1, destination: w3],
+
+movk [value: [1, shift: [lsl, 32]], destination: x3],
+movz [value: [1, shift: [lsl, 32]], destination: x3],
+movn [value: [1, shift: [lsl, 32]], destination: x3],
