@@ -12,11 +12,11 @@
 #include "Bitstream.hpp"
 #include "ParseTree.hpp"
 #include "Tokenizer.hpp"
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <filesystem>
 
 using namespace std;
 
@@ -88,6 +88,11 @@ int main(int argc, const char* argv[]) {
         std::filesystem::path output = std::string(argv[3]);
         std::filesystem::create_directories(output.parent_path());
         compileArm(input, output, mode);
+        std::filesystem::permissions(
+            output,
+            std::filesystem::perms::owner_all | std::filesystem::perms::group_all,
+            std::filesystem::perm_options::add
+        );
     } catch (std::runtime_error& e) { std::cerr << e.what() << "\n"; } catch (...) {
         std::cerr << "Failed for unknown reason.\n";
     }
