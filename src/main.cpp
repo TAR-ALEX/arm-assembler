@@ -86,7 +86,9 @@ int main(int argc, const char* argv[]) {
             );
         std::string input = std::string(argv[2]);
         std::filesystem::path output = std::string(argv[3]);
-        std::filesystem::create_directories(output.parent_path());
+        try {
+            std::filesystem::create_directories(output.parent_path());
+        } catch (...) {}
         compileArm(input, output, mode);
         std::filesystem::permissions(
             output,
