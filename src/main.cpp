@@ -15,13 +15,31 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
+std::stringstream joinFiles(std::vector<std::string> paths) {
+    std::stringstream jointFile;
+    for (auto& path : paths) {
+        if(!std::filesystem::exists(path)) throw std::runtime_error("input "+path+" does not exist.");
+        if(std::filesystem::is_directory(path)) throw std::runtime_error("input "+path+" is a directory");
+        ifstream file{path};
+        jointFile << file.rdbuf() << std::endl;
+        file.close();
+        jointFile.clear();
+    }
+    jointFile.seekg(0, std::ios::beg);
+    jointFile.clear();
+    return jointFile;
+}
+
 //"Examples/square_rpi3_v.s"
-void compileArm(std::string input, std::string output, std::string mode = "elf", ostream* dumpLog = nullptr) {
+void compileArm(
+    std::vector<std::string> input, std::string output, std::string mode = "elf", ostream* dumpLog = nullptr
+) {
     Tokenizer tkn;
     ParseTreeBuilder ptb;
     Arm64 arm64;
@@ -34,13 +52,10 @@ void compileArm(std::string input, std::string output, std::string mode = "elf",
 
     log << "------------------------" << endl;
 
-    ifstream infile;
-    infile.open(input);
+    std::stringstream infile = joinFiles(input);
 
     auto tokens = tkn.tokenize(infile);
     log << "------------" << endl;
-
-    infile.close();
 
     tokens.insert(tokens.begin(), Token("[", "START"));
     tokens.push_back(Token("]", "END"));
@@ -82,10 +97,13 @@ int main(int argc, const char* argv[]) {
             throw std::runtime_error("Bad argument, first arg should be either elf or raw.");
         if (argc < 4)
             throw std::runtime_error(
-                "Not enough arguments, second and third argument should be input and output paths respectivley"
+                "Not enough arguments, starting from the second argument, provide input paths, the last path is the putput path."
             );
-        std::string input = std::string(argv[2]);
-        std::filesystem::path output = std::string(argv[3]);
+        std::vector<std::string> input = {};
+        for(int i = 2; i < argc-1; i++){
+            input.push_back(argv[i]);
+        }
+        std::filesystem::path output = std::string(argv[argc-1]);
         try {
             std::filesystem::create_directories(output.parent_path());
         } catch (...) {}

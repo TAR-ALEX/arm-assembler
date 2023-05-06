@@ -37,7 +37,7 @@ struct Token{
 
 struct Tokenizer{
   Logging log;
-  vector<Token> tokenize(ifstream &infile);
+  vector<Token> tokenize(istream &infile);
 };
 
 #endif /* tokenizer_hpp */

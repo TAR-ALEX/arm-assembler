@@ -22,7 +22,7 @@ bool oddBackslashes(string s) {
     return result;
 }
 
-vector<Token> Tokenizer::tokenize(ifstream& infile) {
+vector<Token> Tokenizer::tokenize(istream& infile) {
     char c;
     bool inString = false;
     vector<Token> tokens;
